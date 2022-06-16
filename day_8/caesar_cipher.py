@@ -6,19 +6,27 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 def encrypt(plaintext, offset):
     encoded = ''
     for i in plaintext:
-        encoded += alphabet[alphabet.index(i) + offset]
+        if i in alphabet:
+            encoded += alphabet[alphabet.index(i) + offset]
+        else:
+            encoded += i
     return encoded
 
 def decrypt(plaintext, offset):
     decoded = ''
     for i in plaintext:
-        decoded += alphabet[alphabet.index(i) - offset]
+        if i in alphabet:
+            decoded += alphabet[alphabet.index(i) - offset]
+        else:
+            decoded += i
     return decoded
 
 def taking_inputs():
     direction = input("\nType 'encode' to encrypt, 'decode'  to decrypt.\n").lower()
     text = input("\nType your message: ").lower()
     shift_num = int(input("\nEnter the offset number: "))
+    if (shift_num > 26):
+        shift_num %= 26
 
     ciphering(direction,text,shift_num)
 
