@@ -37,15 +37,13 @@ while '_' in display:
             game_won = False
             break
 
-    print(display)
+    print(f"{''.join(display)}")
 
 """ if '_' not in display: """
 
 # after exiting the loop
 if game_won:
     print('''
-    
-
                                                888            
                                                888            
                                                888            
@@ -57,8 +55,6 @@ Y88b.   Y88..88P888  888Y88b 888888    888  888Y88b.      X88
                              888                              
                         Y8b d88P                              
                          "Y88P"                               
-
-
     ''')
     print("You won!")
 else:
