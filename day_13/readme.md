@@ -7,6 +7,10 @@ Grace Hopper found the first bug: an actual moth in the computer.
 4. Determine a fix for the bug.
 5. Apply the fix and test it.
 6. Rinse. Repeat.
+7. Take a break.
+8. Ask a friend \<fresh set of eyes>.
+9. Run your code often.
+10. Ask StackOverflow.
 
 # Types of errors
 No matter how smart or how careful you are, errors are your constant companion. With practice, you will get slightly better at not making errors, and much, much better at finding and correcting them.
