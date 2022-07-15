@@ -2,6 +2,8 @@ from pprint import pprint
 import requests
 from bs4 import BeautifulSoup
 import spotipy
+import os
+from dotenv import load_dotenv
 
 
 ########## BILLBOARD ##########
@@ -18,16 +20,14 @@ soup = BeautifulSoup(billboard_html, "html.parser")
 # print(soup.prettify())
 song_tags = soup.select("li ul li h3")
 song_names = [tag.get_text().strip() for tag in song_tags]
-# print(songs)
 
 
 ########## SPOTIFY and SPOTIPY ##########
-
-SPOTIPY_CLIENT_ID = "1a7c5e7654dc4a3e85ab09b0744be186"
-SPOTIPY_CLIENT_SECRET = "679b5c8f28dd483782dadda2b3945436"
+load_dotenv()
+# Spotify credentials from .env
+SPOTIPY_CLIENT_ID = os.environ["SPOTIPY_CLIENT_ID"]
+SPOTIPY_CLIENT_SECRET = os.environ["SPOTIPY_CLIENT_SECRET"]
 SPOTIPY_REDIRECT_URI  = "http://example.com"
-# OAUTH_AUTHORIZE_URL = 'https://accounts.spotify.com/authorize'
-# OAUTH_TOKEN_URL = 'https://accounts.spotify.com/api/token'
 
 spotify = spotipy.Spotify(
         auth_manager=spotipy.oauth2.SpotifyOAuth(
@@ -35,15 +35,10 @@ spotify = spotipy.Spotify(
         client_secret=SPOTIPY_CLIENT_SECRET,
         redirect_uri=SPOTIPY_REDIRECT_URI,
         scope="playlist-modify-private",
-        # show_dialog=True,
-        # cache_path="token.txt",
     ))
 
-# print(spotipy_oauth.get_access_token())
-# cache_token = spotipy_oauth.get_access_token(as_dict=False)
-# cache_token = spotify.get_access_token()
+
 user_id = spotify.me()['id']
-# print(user_id)
 
 ########## SPOTIPY SONG URIs##########
 
