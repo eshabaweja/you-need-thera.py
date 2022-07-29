@@ -14,8 +14,8 @@ QUOTES_JSON = 'https://zenquotes.io/api/random'
 PROMISED_UP = 20
 PROMISED_DOWN = 10
 load_dotenv()
-USERNAME = os.environ['USERNAME']
-PASSWORD = os.environ['PASSWORD']
+USERNAME = os.environ['TWITTER_USERNAME']
+PASSWORD = os.environ['TWITTER_PASSWORD']
 
 # getting internet speeds
 speed_driver = webdriver.Firefox()
