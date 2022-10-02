@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+<body>
+    
+    <p>hello, world! shake dat ass.</p>
+    <h1>5*3</h1>
+    <h1>{{5*3}}</h1>
+    <p>Jinja looks and behaves mostly like Python. Special delimiters are used to distinguish Jinja syntax from the static data in the template. Anything between {% raw %}{{ and }}{% endraw %} is an expression that will be output to the final document. {% raw %}{% and %}{% endraw %} denotes a control flow statement like if and for. Unlike Python, blocks are denoted by start and end tags rather than indentation since static text within a block could change indentation.</p>
+    <p><a href="https://stackoverflow.com/questions/25359898/escape-jinja2-syntax-in-a-jinja2-template">This</a> is how you disable jinja2 interpretation of tags.</p>
+    <p>If you're gonna have to import stuff like <code>import random</code>, it's best to do it in the <code>server.py</code> i.e. Flask application file.</p>
+    <h1>Random number: {{num}}</h1>
+</body>
+<footer>© Copyright {{today_date}} eshcapist. Created by {{your_name}}.</footer>
+</html>
