@@ -1,12 +1,14 @@
 from flask import Flask, render_template
+import requests
 
 app = Flask(__name__)
+api_fetch = requests.get(url="https://api.npoint.io/c790b4d5cab58020d391").json()
 
 # Home page rendered
 @app.route("/")
 @app.route("/index.html")
 def home():
-    return render_template('index.html')
+    return render_template('index.html',api_fetch=api_fetch)
 
 # About page rendered
 @app.route("/about.html")
