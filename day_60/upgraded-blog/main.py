@@ -6,26 +6,24 @@ api_fetch = requests.get(url="https://api.npoint.io/c790b4d5cab58020d391").json(
 
 # Home page rendered
 @app.route("/")
-@app.route("/index.html")
+@app.route("/index")
 def home():
     return render_template('index.html',api_fetch=api_fetch)
 
 # About page rendered
-@app.route("/about.html")
+@app.route("/about")
 def about():
     return render_template('about.html')
 
-# Contact page rendered
-@app.route("/contact.html")
+# Contact page rendered AND Contact form submission
+@app.route("/contact", methods=["GET","POST"])
 def contact():
-    return render_template("contact.html")
+    if request.method=="GET":
+        return render_template("contact.html")
 
-# Contact form submission
-@app.route("/form-entry", methods=["POST"])
-def form_entry():
-    meth=request.method
-    message = request.form["message"]
-    return f"<p>Message Sent! Now run along, don't expect a reply.</p>"
+    elif(request.method=="POST"):
+        message = request.form["message"]
+        return f"<p>Message Sent! Now run along, don't expect a reply.</p>"
 
 # Posts rendered dynamically
 """ You can add variable sections to a URL by marking sections with <variable_name>. 
