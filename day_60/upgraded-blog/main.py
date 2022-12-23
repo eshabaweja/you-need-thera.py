@@ -19,11 +19,11 @@ def about():
 @app.route("/contact", methods=["GET","POST"])
 def contact():
     if request.method=="GET":
-        return render_template("contact.html")
+        return render_template("contact.html", msg_sent = False)
 
     elif(request.method=="POST"):
         message = request.form["message"]
-        return f"<p>Message Sent! Now run along, don't expect a reply.</p>"
+        return render_template("contact.html", msg_sent = True)
 
 # Posts rendered dynamically
 """ You can add variable sections to a URL by marking sections with <variable_name>. 
