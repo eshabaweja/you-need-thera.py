@@ -1,13 +1,25 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<title>Success</title>
-</head>
-<body>
-	<div class="container">
-		<h1>Top Secret </h1>
-		<iframe src="https://giphy.com/embed/Ju7l5y9osyymQ" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-		<p><a href="https://giphy.com/gifs/rick-astley-Ju7l5y9osyymQ">via GIPHY</a></p>
-	</div>
-</body>
-</html>
+<!-- Template Inheritance -->
+
+{% extends "base.html" %}
+{% block title %}Denied{% endblock %}
+
+<!-- The extends tag must be the first tag in the template.
+	To render the contents of a block defined in the parent template,
+	use {{ super() }}. -->
+
+{% block styling %}
+{{ super() }}
+h1 {
+   color:yellow;
+}
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+	<h1>Top Secret </h1>
+	<iframe src="https://giphy.com/embed/Ju7l5y9osyymQ" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+	<p><a href="https://giphy.com/gifs/rick-astley-Ju7l5y9osyymQ">via GIPHY</a></p>
+</div>
+{% endblock %}
+
