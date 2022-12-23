@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Login</title>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Login</h1>
+		<!-- This is where our form will go. -->
+		<form method="POST" action="{{url_for('login')}}" novalidate>
+			{{ my_form.csrf_token }}
+			{{my_form.email.label}} {{my_form.email}} <br/><br/>
+			{{my_form.password.label}} {{my_form.password}}<br/><br/>
+			{{my_form.submit}}
+
+			<!-- displaying errors if any -->
+			{% for err_name, err_message in errors.items() %}
+			<li>{{err_name}} : {{err_message[0]}}</li>
+			{%endfor%}
+		</form>
+	</div>
+</body>
+
+</html>
