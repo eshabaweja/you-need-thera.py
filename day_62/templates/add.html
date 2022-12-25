@@ -2,6 +2,13 @@
 {% block styles %}
 {{super()}}
 <link rel="stylesheet" href={{url_for('static',filename='css/styles.css')}}>
+<style>
+input, select{
+  color: white;
+  width: 50vw;
+  background-color: transparent;
+}
+</style>
 {% endblock %}
 {% block title %}Add A New Cafe{% endblock %}
 
@@ -13,6 +20,11 @@
       <h1>Add a new cafe into the database</h1>
 
       <!-- This is where your WTForm will go -->
+      <!-- {{form.cafe.label}} -->
+      {% for item in form %}<br/>
+      {{item.label}} <br/>
+      {{item}}<br/>
+      {% endfor %}
 
 	  <p class="space-above"><a href="#">See all cafes</a></p>
 
