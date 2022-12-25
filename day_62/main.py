@@ -20,7 +20,7 @@ csrf = CSRFProtect(app=app)
 
 class CafeForm(FlaskForm):
     cafe = StringField("Cafe name", validators=[DataRequired()])
-    location = URLField("Cafe Location on Google Maps (URL)")
+    location = URLField("Cafe Location on Google Maps (URL)", validators=[validators.URL()])
     opening = TimeField("Opening Time", validators=[DataRequired()])
     closing = TimeField("Closing Time", validators=[DataRequired()])
     coffee_rating = SelectField(
@@ -52,14 +52,22 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/add")
+@app.route("/add", methods=["POST"])
 def add_cafe():
     form = CafeForm()
     if form.validate_on_submit():
         print("True")
+        # print(form.cafe.data)
     # Exercise:
     # Make the form write a new row into cafe-data.csv
     # with   if form.validate_on_submit()
+        with open("cafe-data.csv", "a", newline="") as csv_file:
+            csv_writer = csv.writer(csv_file, delimiter=",")
+            cafe_attrs = []
+            for cafe_attr in form:
+                cafe_attrs.append(cafe_attr.data)
+            csv_writer.writerow(cafe_attrs[:-2])
+            
     return render_template("add.html", form=form)
 
 
