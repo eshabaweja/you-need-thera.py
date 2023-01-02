@@ -3,6 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 import random
 
 # Developers test their APIs using Postman.
+# Watch this: https://www.youtube.com/watch?v=VywxIQ2ZXw4
+# Postman web app can't access localhost
+# You'll need the desktop app
 
 app = Flask(__name__)
 
@@ -61,6 +64,25 @@ def search_by_location():
     return {"error": {"Not Found": "Sorry, we don't have a cafe at that location."}}
 
 ## HTTP POST - Create Record
+@app.route("/add", methods=["GET","POST"])
+def post_new_cafe():
+    if request.method=="POST":
+        new_cafe = Cafe(
+            name=request.form.get("name"),
+            map_url=request.form.get("map_url"),
+            img_url=request.form.get("img_url"),
+            location=request.form.get("loc"),
+            has_sockets=bool(request.form.get("sockets")),
+            has_toilet=bool(request.form.get("toilet")),
+            has_wifi=bool(request.form.get("wifi")),
+            can_take_calls=bool(request.form.get("calls")),
+            seats=request.form.get("seats"),
+            coffee_price=request.form.get("coffee_price"),
+        )
+        db.session.add(new_cafe)
+        db.session.commit()
+        return jsonify(response={"success": "Successfully added the new cafe."})
+    return render_template('add.html')
 
 ## HTTP PUT/PATCH - Update Record
 
