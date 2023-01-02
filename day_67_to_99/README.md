@@ -39,3 +39,25 @@
   - salt is a random set of characters
   - hashing algorithms: look up some industry standard ones
   - salt **rounds**
+
+## Day 69
+
+- The first user's `id` is `1`. They are the admin.
+
+- Just because a user can't see the buttons, they can still manually  access the /edit-post or /new-post or /delete routes. Protect these  routes by creating a Python decorator called `@admin_only`
+
+- If the current_user's id is 1 then they can access those routes, otherwise, they should get a 403 error (not authorised).
+
+## Day 70: publishing websites
+
+- git - version control
+- github - remote repositories
+- "big green button" is childish/noob-like
+- **heroku vs vercel vs docker containers**
+- WSGI stands for **Web Server Gateway Interface** and it's described here: https://www.python.org/dev/peps/pep-3333/
+- It standardises the language and protocols between our Python Flask application and the host server. We use `gunicorn`.
+- SQLite is a file-based database.
+- PosgreSQL, a database that can handle millions of data entries and reliably delivers data to users.
+
+## Day 71
+
