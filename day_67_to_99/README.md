@@ -11,7 +11,7 @@
 - more about Postman than RESTful API
 - watch Postman video on freecodecamp
 
-## Day 68
+## Day 68: Authentication
 
 - learn SQL before all this copy-paste SQLite and SQLAlchemy
 - take `user id` and `password` input using form
