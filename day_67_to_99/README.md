@@ -59,5 +59,26 @@
 - SQLite is a file-based database.
 - PosgreSQL, a database that can handle millions of data entries and reliably delivers data to users.
 
-## Day 71
+## Day 71: Pandas
+
+- How to explore a Pandas DataFrame
+- How to detect NaN (not a number) values and clean your data
+- How to select particular columns, rows, and individual cells
+- How to sort your data
+- How to group data by category
+
+### Notebook
+
+- when we're exploring and visualising a dataset, you'll find the Python notebook format better suited.
+- Google Colab or Jupyter Notebook
+- https://www.youtube.com/watch?v=wotkLCoJ_ks
+- https://www.youtube.com/watch?v=HW29067qVWk
+- numbers next to cell show you the sequence in which they are executed
+
+### Pandas for tabular data
+
+- .csv
+- NAN values are blank cells or cells that contain strings instead of numbers. Use the `.isna()` method and see if you can spot if there's a problem somewhere. 
+- There's two ways you can go about removing this row. The first way is to manually remove the row at index 50. The second way is to simply use  the `.dropna()` method from pandas.
+- 
 
