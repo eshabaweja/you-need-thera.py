@@ -95,5 +95,16 @@
 
 - In this case, we don't want to drop the rows that have a NaN value.  Instead, we want to substitute the number 0 for each NaN value in the  DataFrame. We can do this with the` .fillna()` method.
 
-## Day 74
+## Day 74-75
+
+- How to make time-series data comparable by resampling and  converting to the same periodicity (e.g., from daily data to monthly  data). 
+- Fine-tuning the styling of Matplotlib charts by using limits, labels, linestyles, markers, colours, and the chart's resolution.
+- Using grids to help visually identify seasonality in a time series.
+- Finding the number of missing and NaN values and how to locate NaN values in a DataFrame. 
+- How to work with Locators to better style the time axis on a chart 
+- Review the concepts learned in the previous three days and apply them to new datasets
+
+- **plotly** to make super pretty plots of all kinds
+
+## Day 76: NumPy
 
