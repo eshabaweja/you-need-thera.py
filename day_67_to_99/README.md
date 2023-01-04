@@ -79,6 +79,21 @@
 
 - .csv
 - NAN values are blank cells or cells that contain strings instead of numbers. Use the `.isna()` method and see if you can spot if there's a problem somewhere. 
-- There's two ways you can go about removing this row. The first way is to manually remove the row at index 50. The second way is to simply use  the `.dropna()` method from pandas.
-- 
+- Use `.head()`, `.tail()`, `.shape` and `.columns` to explore your DataFrame and find out the number of rows and columns as well as the column names. 
+- Look for NaN (not a number) values with `.findna()` and consider using `.dropna()` to clean up your DataFrame. 
+- You can access entire columns of a DataFrame using the square bracket notation: `df['column name']` or `df[['column name 1', 'column name 2', 'column name 3']]`
+- You can access individual cells in a DataFrame by chaining square brackets `df['column name'][index]` or using `df['column name'].loc[index]`
+- The largest and smallest values, as well as their positions, can be found with methods like `.max()`, `.min()`, `.idxmax()` and `.idxmin()`
+- You can sort the DataFrame with `.sort_values()` and add new columns with `.insert()`
+- To create an Excel Style Pivot Table by grouping entries that belong to a particular category use the `.groupby()` method
+
+## Day 72-73: create charts with Matplotlib
+
+- notebooks keep **execution count**
+- https://jupyter-client.readthedocs.io/en/latest/messaging.html#execution-counter-prompt-number
+- The [pivot()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pivot.html) method: when you want to convert your DataFrame so that each category has its own column.
+
+- In this case, we don't want to drop the rows that have a NaN value.  Instead, we want to substitute the number 0 for each NaN value in the  DataFrame. We can do this with the` .fillna()` method.
+
+## Day 74
 
