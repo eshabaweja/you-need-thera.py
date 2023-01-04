@@ -5,13 +5,14 @@
 - at least 3-4 days were just a recycle of the web-dev course
 - good for learning python fundamentals but the rest of it is super outdated/deprecated
 - jut go to youtube and [roadmap.sh](roadmap.sh)
+- :dizzy: means it's a good topic; study it more on YouTube
 - > It's just that spending a week+ on something I don't really have an interest in or a talent for seems a bit of a waste, when I could instead learn other stuff.
 
 ## Day 66-67
 - more about Postman than RESTful API
 - watch Postman video on freecodecamp
 
-## Day 68: Authentication
+## :dizzy: Day 68: Authentication
 
 - learn SQL before all this copy-paste SQLite and SQLAlchemy
 - take `user id` and `password` input using form
@@ -106,5 +107,9 @@
 
 - **plotly** to make super pretty plots of all kinds
 
-## Day 76: NumPy
+## :dizzy: Day 76: NumPy
 
+![img](README-assets/2020-10-12_10-09-26-7787e15311eec7748b7ef1aa01140549.png)
+
+- Numerical Python
+- standard for working with numerical data in Python
